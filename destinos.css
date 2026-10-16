@@ -1,0 +1,270 @@
+/* ---------- ESTILO GERAL ---------- */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Espaçamento por causa da navbar fixa */
+.secao-dest {
+  padding-top: 140px;
+  padding-bottom: 80px;
+}
+
+/* ---------- TÍTULO ---------- */
+.secao-dest h1 {
+  color: #00bfa6;
+  font-weight: 600;
+}
+
+/* ---------- CARDS ---------- */
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.img {
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Botões personalizados */
+.btn-success {
+  background-color: #00bfa6;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+  background-color: #008f7a;
+}
+
+/* ---------- NAVBAR ---------- */
+/* NAVBAR ESTILO PRINCIPAL — Igual à página inicial */
+.navbar-principal {
+  height: 95px; /* aumenta a barra */
+  display: flex;
+  align-items: center;
+  padding: 18px 0;
+  background-color: #ffffff !important;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+/* Logo com tamanho padronizado */
+.logo img {
+ width: 200px; /* diminuído para não ficar desproporcional */
+  height: auto;
+  object-fit: contain;
+}
+
+/* Ajuste dos links */
+.nav-links .nav-link {
+  color: #333 !important;
+  margin-left: 22px;
+  font-size: 17px;
+  font-weight: 500;
+  transition: .3s ease;
+}
+
+.nav-links .nav-link:hover,
+.nav-links .nav-link.active {
+  color: #00bfa6 !important;
+}
+
+header {
+  display: flex;                     
+  align-items: center;               
+  justify-content: space-between;    
+  padding: 20px 60px;  /* reduzido para melhorar equilíbrio */
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+
+/* Links do menu */
+nav.menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  margin-left: 25px;
+  position: relative;
+  transition: .25s;
+  font-size: 18px; /* ajustado para harmonizar */
+}
+
+nav.menu a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #0640fd;
+  transition: width 0.25s ease-in-out;
+}
+
+nav.menu a:hover {
+  color: #053efa;
+}
+nav.menu a:hover::after {
+  width: 100%;
+}
+
+
+
+
+
+/* ========== RESPONSIVO DESTINOS ========== */
+
+/* --- Telas até 991px (tablets) --- */
+@media (max-width: 991px) {
+
+  header {
+    padding: 15px 30px;
+  }
+
+  nav.menu a {
+    margin-left: 15px;
+    font-size: 17px;
+  }
+
+  .secao-dest {
+    padding-top: 160px;
+  }
+
+  .img {
+    height: 160px;
+  }
+}
+
+/* --- Telas até 768px (celulares médios) --- */
+@media (max-width: 768px) {
+
+  header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0;
+    height: auto;
+  }
+
+  .logo img {
+    width: 160px;
+  }
+
+  nav.menu a {
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
+  .secao-dest h1 {
+    font-size: 26px;
+    padding: 0 15px;
+  }
+
+  .img {
+    height: 150px;
+  }
+}
+
+/* --- Telas até 600px (celulares pequenos) --- */
+@media (max-width: 600px) {
+
+  header {
+    padding: 10px 0;
+  }
+
+  nav.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  nav.menu a {
+    margin: 0;
+    font-size: 15px;
+  }
+
+  .secao-dest {
+    padding-top: 190px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .secao-dest h1 {
+    font-size: 23px;
+  }
+
+  .img {
+    height: 140px;
+  }
+
+  .card-body p {
+    font-size: 14px;
+  }
+
+  .btn-success {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+}
+
+/* --- Telas até 430px (iPhone Mini, Android pequeno) --- */
+@media (max-width: 430px) {
+
+  .logo img {
+    width: 140px;
+  }
+
+  nav.menu a {
+    font-size: 14px;
+  }
+
+  .secao-dest {
+    padding-top: 200px;
+  }
+
+  .img {
+    height: 130px;
+  }
+
+  .card-body h5 {
+    font-size: 17px;
+  }
+}
+
+/* --- Telas até 360px (bem pequenas) --- */
+@media (max-width: 360px) {
+  
+  nav.menu {
+    gap: 8px;
+  }
+
+  nav.menu a {
+    font-size: 13px;
+  }
+
+  .img {
+    height: 120px;
+  }
+
+  .secao-dest h1 {
+    font-size: 20px;
+  }
+}
